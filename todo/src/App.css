@@ -1,0 +1,42 @@
+.App {
+  position: relative;
+  max-width: 1440px;
+  height: 100dvh;
+  background-color: hsl(235, 19%, 35%);
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.container {
+  position: absolute;
+  top: 36%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 38%;
+}
+
+header {
+  position: absolute;
+  width: 100%;
+  min-height: 300px;
+  background: url(./images/bg-desktop-dark.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.toggle-theme {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: url(./images/icon-sun.svg) center center no-repeat;
+}
+
+.header-app {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  font-size: 40px;
+  font-weight: 700;
+  color: hsl(0, 0%, 98%);
+  letter-spacing: 18px;
+}

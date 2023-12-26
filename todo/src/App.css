@@ -1,3 +1,21 @@
+@import url(./reset/reset.css);
+
+:root {
+  --clr-input-drk: hsl(235, 21%, 11%);
+  --grd-check-bgr: linear-gradient(135deg,
+  hsl(192deg 100% 67%) 0%,
+  hsl(202deg 99% 67%) 11%,
+  hsl(212deg 96% 66%) 22%,
+  hsl(221deg 95% 66%) 33%,
+  hsl(231deg 94% 66%) 44%,
+  hsl(241deg 93% 66%) 56%,
+  hsl(251deg 91% 66%) 67%,
+  hsl(261deg 90% 65%) 78%,
+  hsl(270deg 88% 65%) 89%,
+  hsl(280deg 87% 65%) 100%);
+}
+
+
 .App {
   position: relative;
   max-width: 1440px;

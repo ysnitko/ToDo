@@ -1,11 +1,15 @@
-import React from 'react';
-import InputField from '../InputField/InputField';
-import './Form.css';
+import React from "react";
+import InputField from "../InputField/InputField";
+import "./Form.css";
 
-const Form = () => {
+const Form = ({ handleSubmit, inputText, toggleChecked, checked }) => {
   return (
-    <form>
-      <InputField />
+    <form onSubmit={handleSubmit}>
+      <InputField
+        inputText={inputText}
+        toggleChecked={toggleChecked}
+        checked={checked}
+      />
     </form>
   );
 };

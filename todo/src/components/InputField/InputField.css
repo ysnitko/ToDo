@@ -1,51 +1,69 @@
 @import url(../../App.css);
 
 #pattern1 {
-    display: flex;
-    width: 100%;
-    background-color: var(--clr-input-drk);
-    
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 18px;
+  gap: 20px;
+  background-color: var(--clr-input-drk);
+  border-radius: 5px;
 }
 
-.task-field {
-    width: 100%; 
+/* .task-field {
+  width: 100%;
+} */
+
+input[type="text"] {
+  background-color: var(--clr-input-drk);
+  border: none;
+  outline: none;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--clr-input-text-drk);
+}
+
+input[type="text"]::placeholder {
+  font-family: "Josefin Sans", sans-serif;
+  color: var(--clr-placeholder-text-drk);
+}
+
+input[type="radio"] {
+  margin: 0;
 }
 
 #pattern1 input[type="radio"]::before {
-    position: absolute;
-    top: -5px;
-    left: 6px;
-    width: 25px;
-    height: 25px;
-    font-size: 21.5px;
-    content: "";
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-#pattern1 input[type="radio"]::before {
-    /* content: url(../../images/icon-check.svg); */
+  position: absolute;
+  top: -4px;
+  left: 8px;
+  width: 25px;
+  height: 25px;
+  font-size: 21.5px;
+  content: "";
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 #pattern1 input[type="radio"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    position: relative;
-    width: 25px;
-    height: 25px;
-    background-color: var(--clr-input-drk);
-    border: 1px solid gray;
-    border-radius: 50%;
-    transition: border-color 0.3s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  width: 25px;
+  height: 25px;
+  background-color: var(--clr-input-drk);
+  border: 2px solid var(--clr-copmlete-text-drk);
+  border-radius: 50%;
+  transition: border-color 0.3s;
 }
 
-#pattern1 input[type="radio"]:checked {
-    opacity: 1;
-    background-image: var(--grd-check-bgr);
+/* #pattern1 input[type="radio"]:checked {
+  opacity: 1;
+  background-image: var(--grd-check-bgr);
+  border: none;
 }
 
 #pattern1 input[type="radio"]:checked::before {
-    opacity: 1;
-    content: url(../../images/icon-check.svg);
-}
+  opacity: 1;
+  content: url(../../images/icon-check.svg);
+} */

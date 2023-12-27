@@ -1,7 +1,7 @@
-import React from 'react';
-import './InputField.css';
+import React from "react";
+import "./InputField.css";
 
-const InputField = () => {
+const InputField = ({ inputText }) => {
   return (
     <div className="input-task-container" id="pattern1">
       <input className="active-tsk-indicator" type="radio" />
@@ -9,8 +9,9 @@ const InputField = () => {
         className="task-field"
         type="text"
         placeholder="Create a new todo..."
+        ref={inputText}
+        required
       />
-      ;
     </div>
   );
 };

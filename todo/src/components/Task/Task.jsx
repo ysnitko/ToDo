@@ -1,7 +1,7 @@
-import React from "react";
-import "./Task.css";
+import React from 'react';
+import './Task.css';
 
-const Task = ({ taskDone, id, toggleChecked, taskName, doneTask }) => {
+const Task = ({ taskDone, id, toggleChecked, taskName }) => {
   return (
     <li className="pattern2">
       <input
@@ -10,7 +10,7 @@ const Task = ({ taskDone, id, toggleChecked, taskName, doneTask }) => {
         type="checkbox"
         name="tsk-indicator"
         checked={taskDone}
-        onChange={() => toggleChecked(id)}
+        onChange={toggleChecked}
       />
       <label className="added-task" htmlFor="tsk-indicator">
         {taskName}

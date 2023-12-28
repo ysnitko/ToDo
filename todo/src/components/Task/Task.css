@@ -13,12 +13,9 @@ li:nth-child(1) {
   border-top-left-radius: 5px;
 }
 
-/* .task-field {
-    width: 100%;
-  } */
-
 input[type="checkbox"] {
   margin-right: 2px;
+  cursor: pointer;
 }
 
 li input[type="checkbox"] {
@@ -78,6 +75,7 @@ label {
   font-family: "Josefin Sans", sans-serif;
   font-size: 18px;
   color: var(--clr-input-text-drk);
+  cursor: pointer;
 }
 
 .delete-task {
@@ -90,4 +88,9 @@ label {
 
 li:hover .delete-task {
   visibility: inherit;
+}
+
+.done {
+  text-decoration: line-through;
+  color: var(--clr-placeholder-text-drk);
 }

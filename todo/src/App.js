@@ -5,16 +5,25 @@ import './App.css';
 
 function App() {
   const [task, setTask] = useState([]);
+  const [doneTask, setDoneTask] = useState('');
   const inputText = useRef('');
 
   const toggleChecked = (event) => {
     const targetId = +event.target.id;
-    console.log(targetId);
-    setTask((prevTask) =>
-      prevTask.map((item) =>
-        item.id === targetId ? { ...item, done: !item.done } : item
-      )
-    );
+    const targetElemIndex = task.findIndex((item) => item.id === targetId);
+    if (targetElemIndex !== -1) {
+      const updateTask = [...task];
+      updateTask[targetElemIndex].done = !updateTask[targetElemIndex].done;
+      setTask(updateTask);
+      setDoneTask('done');
+    }
+  };
+
+  const deleteTask = (event) => {
+    const targetId = +event.target.id;
+    const deleteTarget = task.filter((item) => item.id !== targetId);
+    // setTask(deleteTarget);
+    console.log(deleteTarget);
   };
 
   const handleSubmit = (event) => {
@@ -52,6 +61,8 @@ function App() {
                 taskDone={item.done}
                 taskName={item.taskName}
                 toggleChecked={toggleChecked}
+                deleteTask={deleteTask}
+                doneTask={doneTask}
               />
             ))}
           </ol>

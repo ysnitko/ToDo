@@ -1,7 +1,14 @@
 import React from 'react';
 import './Task.css';
 
-const Task = ({ taskDone, id, toggleChecked, taskName }) => {
+const Task = ({
+  taskDone,
+  id,
+  toggleChecked,
+  taskName,
+  doneTask,
+  deleteTask,
+}) => {
   return (
     <li className="pattern2">
       <input
@@ -12,10 +19,13 @@ const Task = ({ taskDone, id, toggleChecked, taskName }) => {
         checked={taskDone}
         onChange={toggleChecked}
       />
-      <label className="added-task" htmlFor="tsk-indicator">
+      <label
+        className={taskDone ? `added-task + ${doneTask}` : 'added-task'}
+        htmlFor={id}
+      >
         {taskName}
       </label>
-      <button className="delete-task"></button>
+      <button className="delete-task" onClick={deleteTask}></button>
     </li>
   );
 };

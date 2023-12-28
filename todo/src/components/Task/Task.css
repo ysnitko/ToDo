@@ -17,32 +17,24 @@ li:nth-child(1) {
     width: 100%;
   } */
 
-input[type="radio"] {
+input[type="checkbox"] {
   margin-right: 2px;
 }
 
-li input[type="radio"] {
+li input[type="checkbox"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   position: relative;
-  width: 25px;
-  height: 25px;
+  min-width: 25px;
+  min-height: 25px;
   background-color: var(--clr-input-drk);
   border: 2px solid var(--clr-copmlete-text-drk);
   border-radius: 50%;
   transition: border-color 0.3s;
 }
 
-li input[type="radio"]:hover {
-  border-radius: 50%;
-  border-image: var(--grd-check-bgr) 1;
-  border-width: 1px;
-  border-style: solid;
-}
-
-
-li input[type="radio"]::before {
+li input[type="checkbox"]::before {
   position: absolute;
   top: -4px;
   left: 8px;
@@ -54,17 +46,25 @@ li input[type="radio"]::before {
   transition: opacity 0.3s;
 }
 
-li input[type="radio"]:checked {
+li input[type="checkbox"]:checked {
   opacity: 1;
-  /* background-image: var(--grd-check-bgr); */
+  background-image: var(--grd-check-bgr);
   border: none;
 }
 
-li input[type="radio"]:checked::before {
+li input[type="checkbox"]:checked::before {
   opacity: 1;
-  content: url(../../images/icon-check.svg);
+  content: url(../../assets/images/icon-check.svg);
 }
 
+/* li input[type="radio"]:hover {
+  border-radius: 50px;
+  border: 2px solid transparent;
+  background: var(--grd-check-bgr) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+} */
 
 ol {
   width: 100%;
@@ -80,3 +80,14 @@ label {
   color: var(--clr-input-text-drk);
 }
 
+.delete-task {
+  visibility: hidden;
+  width: 25px;
+  height: 25px;
+  border: none;
+  background: url(../../assets/images/icon-cross.svg) no-repeat center;
+}
+
+li:hover .delete-task {
+  visibility: inherit;
+}

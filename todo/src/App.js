@@ -8,7 +8,7 @@ function App() {
   const [doneTask, setDoneTask] = useState('');
   const inputText = useRef('');
   const [renderTask, setRenderTask] = useState([...task]);
-  const [activeFilter, setActiveFilter] = useState('');
+  const [activeFilter, setActiveFilter] = useState('all');
 
   useEffect(() => {
     setRenderTask([...task]);

@@ -28,12 +28,11 @@ li input[type="checkbox"] {
   background-color: var(--clr-input-drk);
   border: 2px solid var(--clr-copmlete-text-drk);
   border-radius: 50%;
-  transition: border-color 0.3s;
 }
 
 li input[type="checkbox"]::before {
   position: absolute;
-  top: -4px;
+  top: -6px;
   left: 8px;
   width: 25px;
   height: 25px;
@@ -53,15 +52,6 @@ li input[type="checkbox"]:checked::before {
   opacity: 1;
   content: url(../../assets/images/icon-check.svg);
 }
-
-/* li input[type="radio"]:hover {
-  border-radius: 50px;
-  border: 2px solid transparent;
-  background: var(--grd-check-bgr) border-box;
-  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-} */
 
 ol {
   width: 100%;

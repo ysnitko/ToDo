@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Form from './components/Form/Form';
 import Task from './components/Task/Task';
 import './App.css';
@@ -7,6 +7,12 @@ function App() {
   const [task, setTask] = useState([]);
   const [doneTask, setDoneTask] = useState('');
   const inputText = useRef('');
+  const [renderTask, setRenderTask] = useState([...task]);
+  const [activeFilter, setActiveFilter] = useState('');
+
+  useEffect(() => {
+    setRenderTask([...task]);
+  }, [task]);
 
   const toggleChecked = (event) => {
     const targetId = +event.target.id;
@@ -19,11 +25,47 @@ function App() {
     }
   };
 
-  const deleteTask = (event) => {
-    const targetId = +event.target.id;
-    const deleteTarget = task.filter((item) => item.id !== targetId);
-    // setTask(deleteTarget);
-    console.log(deleteTarget);
+  const deleteTask = (id) => {
+    const deleteTask = task.filter((item) => item.id !== id);
+    setTask([...deleteTask]);
+    setRenderTask([...deleteTask]);
+  };
+
+  const deleteCompletedTask = () => {
+    let findElem = task.filter((item) => item.done !== true);
+    setTask([...findElem]);
+  };
+
+  const showOnlyActive = (tasks) => {
+    const allTasks = [...tasks];
+    const activeTasks = allTasks.filter((item) => item.done === false);
+    if (activeTasks.length === 0) {
+      setRenderTask([...task]);
+    } else {
+      setRenderTask([...activeTasks]);
+    }
+    setActiveFilter('active');
+  };
+
+  const showOnlyCompleted = (tasks) => {
+    const allTasks = [...tasks];
+    const completedTasks = allTasks.filter((item) => item.done === true);
+    console.log(completedTasks.length);
+    if (completedTasks.length === 0) {
+      setRenderTask([...task]);
+    } else {
+      setRenderTask([...completedTasks]);
+    }
+    setActiveFilter('completed');
+  };
+
+  const showAllTasks = () => {
+    setRenderTask([...task]);
+    setActiveFilter('all');
+  };
+
+  const highlightButton = (filter) => {
+    return activeFilter === filter ? 'active' : '';
   };
 
   const handleSubmit = (event) => {
@@ -36,7 +78,19 @@ function App() {
         done: false,
       },
     ]);
+
     inputText.current.value = '';
+  };
+
+  const countActiveTask = () => {
+    let count = 0;
+    for (let index = 0; index < task.length; index++) {
+      const element = task[index];
+      if (element.done === false) {
+        count++;
+      }
+    }
+    return count;
   };
 
   return (
@@ -54,7 +108,7 @@ function App() {
         />
         <div className="task-container">
           <ol>
-            {task.map((item) => (
+            {renderTask.map((item) => (
               <Task
                 key={item.id}
                 id={item.id}
@@ -66,6 +120,39 @@ function App() {
               />
             ))}
           </ol>
+          {renderTask.length > 0 && (
+            <div className="filter-container">
+              <span className="task-left-count">
+                {countActiveTask()} items left
+              </span>
+              <div className="filter-buttons">
+                <button
+                  className={highlightButton('all')}
+                  onClick={showAllTasks}
+                >
+                  All
+                </button>
+                <button
+                  className={highlightButton('active')}
+                  onClick={() => showOnlyActive(task)}
+                >
+                  Active
+                </button>
+                <button
+                  className={highlightButton('completed')}
+                  onClick={() => showOnlyCompleted(task)}
+                >
+                  Completed
+                </button>
+              </div>
+              <button
+                className="clear-completed-task"
+                onClick={deleteCompletedTask}
+              >
+                Clear Completed
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>

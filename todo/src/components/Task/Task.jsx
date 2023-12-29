@@ -1,5 +1,5 @@
-import React from 'react';
-import './Task.css';
+import React from "react";
+import "./Task.css";
 
 const Task = ({
   taskDone,
@@ -20,12 +20,12 @@ const Task = ({
         onChange={toggleChecked}
       />
       <label
-        className={taskDone ? `added-task + ${doneTask}` : 'added-task'}
+        className={taskDone ? `added-task + ${doneTask}` : "added-task"}
         htmlFor={id}
       >
         {taskName}
       </label>
-      <button className="delete-task" onClick={deleteTask}></button>
+      <button className="delete-task" onClick={() => deleteTask(id)}></button>
     </li>
   );
 };

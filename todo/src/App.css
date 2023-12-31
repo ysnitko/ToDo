@@ -27,6 +27,7 @@
   --ff-main: "Josefin Sans", sans-serif;
   --bgr-btn-theme: url(./assets/images/icon-sun.svg) center center no-repeat;
   --bgr-header-theme: url(./assets/images/bg-desktop-dark.jpg) no-repeat center;
+  --bgr-header-theme-mobile: url(./assets/images/bg-mobile-dark.jpg) no-repeat center;
 }
 
 .App.white-theme {
@@ -39,6 +40,7 @@
   --clr-btn-filter: hsl(234, 11%, 52%);
   --bgr-btn-theme: url(./assets/images/icon-moon.svg) center center no-repeat;
   --bgr-header-theme: url(./assets/images/bg-desktop-light.jpg) no-repeat center;
+  --bgr-header-theme-mobile: url(./assets/images/bg-mobile-light.jpg) no-repeat center;
 }
 
 .App {
@@ -117,4 +119,30 @@ button:hover {
 
 .active {
   color: var(--clr-active-filter);
+}
+
+@media screen and (min-width: 320px) and (max-width: 400px) {
+
+  .container {
+    min-width: 85%;
+  }
+
+  header {
+    min-height: 260px;
+    background: var(--bgr-header-theme-mobile);
+    background-size: cover;
+  }
+
+  .filter-container {
+    flex-wrap: wrap;
+
+  }
+
+  .filter-buttons {
+    width: 100%;
+    order: 3;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
 }

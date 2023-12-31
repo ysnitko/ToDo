@@ -10,7 +10,9 @@
   border-radius: 5px;
 }
 
+
 input[type="text"] {
+  width: 90%;
   background-color: var(--clr-input-drk);
   border: none;
   outline: none;
@@ -24,11 +26,11 @@ input[type="text"]::placeholder {
   color: var(--clr-placeholder-text-drk);
 }
 
-input[type="radio"] {
+input[type="checkbox"] {
   margin: 0;
 }
 
-#pattern1 input[type="radio"]::before {
+#pattern1 input[type="chexbox"]::before {
   position: absolute;
   top: -4px;
   left: 8px;
@@ -40,7 +42,7 @@ input[type="radio"] {
   transition: opacity 0.3s;
 }
 
-#pattern1 input[type="radio"] {
+#pattern1 input[type="checkbox"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -52,4 +54,5 @@ input[type="radio"] {
   border-radius: 50%;
   transition: border-color 0.3s;
 }
+
 

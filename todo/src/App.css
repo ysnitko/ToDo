@@ -57,6 +57,7 @@
   top: 36%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 38%;
   min-width: 38%;
   font-family: var(--ff-main)
 }
@@ -121,10 +122,10 @@ button:hover {
   color: var(--clr-active-filter);
 }
 
-@media screen and (min-width: 320px) and (max-width: 400px) {
+@media screen and (min-width: 320px) and (max-width: 600px) {
 
   .container {
-    min-width: 85%;
+    width: 85%;
   }
 
   header {

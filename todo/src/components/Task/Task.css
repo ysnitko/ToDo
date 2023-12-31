@@ -41,7 +41,6 @@ li input[type="checkbox"]::before {
   font-size: 21.5px;
   content: "";
   opacity: 0;
-  transition: opacity 0.3s;
 }
 
 li input[type="checkbox"]:checked {
@@ -63,7 +62,8 @@ ol {
 }
 
 label {
-  width: 90%;
+  width: 80%;
+  word-wrap: break-word;
   font-family: "Josefin Sans", sans-serif;
   font-size: 18px;
   color: var(--clr-input-text-drk);
@@ -85,4 +85,11 @@ li:hover .delete-task {
 .done {
   text-decoration: line-through;
   color: var(--clr-complete-text-drk);
+}
+
+@media screen and (min-width: 320px) and (max-width: 600px) {
+  label {
+    width: 75%;
+    font-size: 16px;
+  }
 }

@@ -85,7 +85,6 @@ function App() {
         done: false,
       },
     ]);
-
     inputText.current.value = '';
   };
 
@@ -110,6 +109,7 @@ function App() {
           <span className="title-app">TODO</span>
           <button
             className="toggle-theme"
+            title="toggle theme"
             onClick={() => toggleThemeTodo('white')}
           ></button>
         </div>

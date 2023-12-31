@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.9edf22da.css",
-    "main.js": "/static/js/main.9b0da76c.js",
+    "main.css": "/static/css/main.f7d003e9.css",
+    "main.js": "/static/js/main.289f3698.js",
     "static/media/JosefinSans-Italic.ttf": "/static/media/JosefinSans-Italic.df99d165945d332a4397.ttf",
     "static/media/JosefinSans-Regular.ttf": "/static/media/JosefinSans-Regular.c978665c44b59cf9c71f.ttf",
     "static/media/JosefinSans-Bold.ttf": "/static/media/JosefinSans-Bold.0ec6d05a9917d9c58519.ttf",
@@ -12,11 +12,11 @@
     "static/media/icon-moon.svg": "/static/media/icon-moon.6c03114b495d05f4380b.svg",
     "static/media/icon-cross.svg": "/static/media/icon-cross.6ee81d30b75cab19d6f7.svg",
     "static/media/icon-check.svg": "/static/media/icon-check.a8fb15d0278c8e312df5.svg",
-    "main.9edf22da.css.map": "/static/css/main.9edf22da.css.map",
-    "main.9b0da76c.js.map": "/static/js/main.9b0da76c.js.map"
+    "main.f7d003e9.css.map": "/static/css/main.f7d003e9.css.map",
+    "main.289f3698.js.map": "/static/js/main.289f3698.js.map"
   },
   "entrypoints": [
-    "static/css/main.9edf22da.css",
-    "static/js/main.9b0da76c.js"
+    "static/css/main.f7d003e9.css",
+    "static/js/main.289f3698.js"
   ]
 }

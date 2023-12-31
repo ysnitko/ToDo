@@ -9,6 +9,8 @@ function App() {
   const inputText = useRef('');
   const [renderTask, setRenderTask] = useState([...task]);
   const [activeFilter, setActiveFilter] = useState('all');
+  const [switchTheme, setSwitchTheme] = useState('dark');
+  const [toggleTheme, setToggleTheme] = useState(false);
 
   useEffect(() => {
     setRenderTask([...task]);
@@ -23,6 +25,11 @@ function App() {
       setTask(updateTask);
       setDoneTask('done');
     }
+  };
+
+  const toggleThemeTodo = (theme) => {
+    setToggleTheme(!toggleTheme);
+    setSwitchTheme(theme);
   };
 
   const deleteTask = (id) => {
@@ -94,12 +101,17 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div
+      className={toggleTheme ? `App ${switchTheme}-theme` : `App dark-theme`}
+    >
       <header></header>
       <div className="container">
         <div className="header-app">
           <span className="title-app">TODO</span>
-          <button className="toggle-theme"></button>
+          <button
+            className="toggle-theme"
+            onClick={() => toggleThemeTodo('white')}
+          ></button>
         </div>
         <Form
           handleSubmit={handleSubmit}

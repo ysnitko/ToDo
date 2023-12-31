@@ -1,15 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
 @import url(./assets/reset/reset.css);
-@font-face {
-  font-family: "Josefin Sans", sans-serif;
-  src: url(./assets/fonts/static/JosefinSans-Regular.ttf);
-}
 
 :root {
+  --clr-title-text: hsl(0, 0%, 98%);
   --clr-input-text-drk: hsl(234, 39%, 85%);
   --clr-btn-hover: hsl(0, 0%, 98%);
   --clr-input-drk: hsl(235, 24%, 19%);
   --clr-body-drk: hsl(235, 21%, 11%);
-  --clr-copmlete-text-drk: hsl(237, 14%, 26%);
+  --clr-complete-text-drk: hsl(237, 14%, 26%);
   --clr-placeholder-text-drk: hsl(233, 14%, 35%);
   --clr-active-filter: hsl(220, 98%, 61%);
   --grd-check-bgr: linear-gradient(
@@ -25,7 +23,22 @@
     hsl(270deg 88% 65%) 89%,
     hsl(280deg 87% 65%) 100%
   );
+  --clr-btn-filter: hsl(233, 14%, 35%);
   --ff-main: "Josefin Sans", sans-serif;
+  --bgr-btn-theme: url(./assets/images/icon-sun.svg) center center no-repeat;
+  --bgr-header-theme: url(./assets/images/bg-desktop-dark.jpg) no-repeat center;
+}
+
+.App.white-theme {
+  --clr-input-drk: hsl(0, 0%, 98%);
+  --clr-input-text-drk: hsl(235, 19%, 35%);
+  --clr-body-drk: hsl(234, 39%, 85%);
+  --clr-complete-text-drk: hsl(233, 11%, 84%);
+  --clr-placeholder-text-drk: hsl(233, 11%, 84%);
+  --clr-btn-hover: hsl(235, 19%, 35%);
+  --clr-btn-filter: hsl(234, 11%, 52%);
+  --bgr-btn-theme: url(./assets/images/icon-moon.svg) center center no-repeat;
+  --bgr-header-theme: url(./assets/images/bg-desktop-light.jpg) no-repeat center;
 }
 
 .App {
@@ -50,7 +63,7 @@ header {
   position: absolute;
   width: 100%;
   min-height: 300px;
-  background: url(./assets/images/bg-desktop-dark.jpg) no-repeat center;
+  background: var(--bgr-header-theme);
   background-size: cover;
 }
 
@@ -58,7 +71,7 @@ header {
   width: 30px;
   height: 30px;
   border: none;
-  background: url(./assets/images/icon-sun.svg) center center no-repeat;
+  background: var(--bgr-btn-theme);
 }
 
 .header-app {
@@ -72,7 +85,7 @@ header {
 .title-app {
   font-size: 40px;
   font-weight: 700;
-  color: var(--clr-input-text-drk);
+  color: var(--clr-title-text);
   letter-spacing: 18px;
 }
 
@@ -90,7 +103,7 @@ button,
 .task-left-count {
   background: none;
   border: none;
-  color: var(--clr-placeholder-text-drk);
+  color: var(--clr-btn-filter);
 }
 
 button:hover {

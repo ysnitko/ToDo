@@ -10,10 +10,6 @@
   border-radius: 5px;
 }
 
-/* .task-field {
-  width: 100%;
-} */
-
 input[type="text"] {
   background-color: var(--clr-input-drk);
   border: none;
@@ -52,18 +48,8 @@ input[type="radio"] {
   width: 25px;
   height: 25px;
   background-color: var(--clr-input-drk);
-  border: 2px solid var(--clr-copmlete-text-drk);
+  border: 2px solid var(--clr-complete-text-drk);
   border-radius: 50%;
   transition: border-color 0.3s;
 }
 
-/* #pattern1 input[type="radio"]:checked {
-  opacity: 1;
-  background-image: var(--grd-check-bgr);
-  border: none;
-}
-
-#pattern1 input[type="radio"]:checked::before {
-  opacity: 1;
-  content: url(../../images/icon-check.svg);
-} */

@@ -141,37 +141,40 @@ function App() {
             </ReactSortable>
           </ol>
           {renderTask.length > 0 && (
-            <div className="filter-container">
-              <span className="task-left-count">
-                {countActiveTask()} items left
-              </span>
-              <div className="filter-buttons">
+            <>
+              <div className="filter-container">
+                <span className="task-left-count">
+                  {countActiveTask()} items left
+                </span>
+                <div className="filter-buttons">
+                  <button
+                    className={highlightButton('all')}
+                    onClick={showAllTasks}
+                  >
+                    All
+                  </button>
+                  <button
+                    className={highlightButton('active')}
+                    onClick={() => showOnlyActive(task)}
+                  >
+                    Active
+                  </button>
+                  <button
+                    className={highlightButton('completed')}
+                    onClick={() => showOnlyCompleted(task)}
+                  >
+                    Completed
+                  </button>
+                </div>
                 <button
-                  className={highlightButton('all')}
-                  onClick={showAllTasks}
+                  className="clear-completed-task"
+                  onClick={deleteCompletedTask}
                 >
-                  All
-                </button>
-                <button
-                  className={highlightButton('active')}
-                  onClick={() => showOnlyActive(task)}
-                >
-                  Active
-                </button>
-                <button
-                  className={highlightButton('completed')}
-                  onClick={() => showOnlyCompleted(task)}
-                >
-                  Completed
+                  Clear Completed
                 </button>
               </div>
-              <button
-                className="clear-completed-task"
-                onClick={deleteCompletedTask}
-              >
-                Clear Completed
-              </button>
-            </div>
+              <span className="drag-drop">Drag and drop to reorder list</span>
+            </>
           )}
         </div>
       </main>

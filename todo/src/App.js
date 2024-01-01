@@ -58,7 +58,6 @@ function App() {
   const showOnlyCompleted = (tasks) => {
     const allTasks = [...tasks];
     const completedTasks = allTasks.filter((item) => item.done === true);
-    console.log(completedTasks.length);
     if (completedTasks.length === 0) {
       setRenderTask([...task]);
     } else {
@@ -78,6 +77,9 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (inputText.current.value === '') {
+      return;
+    }
     setTask([
       ...task,
       {

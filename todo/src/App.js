@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { ReactSortable } from 'react-sortablejs';
 import Form from './components/Form/Form';
 import Task from './components/Task/Task';
 import './App.css';
@@ -104,7 +105,7 @@ function App() {
       className={toggleTheme ? `App ${switchTheme}-theme` : `App dark-theme`}
     >
       <header></header>
-      <div className="container">
+      <main className="container">
         <div className="header-app">
           <span className="title-app">TODO</span>
           <button
@@ -120,17 +121,24 @@ function App() {
         />
         <div className="task-container">
           <ol>
-            {renderTask.map((item) => (
-              <Task
-                key={item.id}
-                id={item.id}
-                taskDone={item.done}
-                taskName={item.taskName}
-                toggleChecked={toggleChecked}
-                deleteTask={deleteTask}
-                doneTask={doneTask}
-              />
-            ))}
+            <ReactSortable
+              list={renderTask}
+              setList={setRenderTask}
+              multiDrag
+              swap
+            >
+              {renderTask.map((item) => (
+                <Task
+                  key={item.id}
+                  id={item.id}
+                  taskDone={item.done}
+                  taskName={item.taskName}
+                  toggleChecked={toggleChecked}
+                  deleteTask={deleteTask}
+                  doneTask={doneTask}
+                />
+              ))}
+            </ReactSortable>
           </ol>
           {renderTask.length > 0 && (
             <div className="filter-container">
@@ -166,7 +174,7 @@ function App() {
             </div>
           )}
         </div>
-      </div>
+      </main>
     </div>
   );
 }

@@ -2,7 +2,7 @@
 
 The project based on an assignment from a popular learning platform frontendmentor.io [todo app](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW/hub).
 
-![ScreenShot](https://raw.github.com/ysnitko/Rock-Paper-Scissors-game-react-/main/design/original/desktop-rules-modal.jpg)
+![ScreenShot](https://raw.github.com/ysnitko/ToDo/main/todo/src/assets/images/todoapp.png)
 
 Live URL [todo app](https://todo-list-app-created.netlify.app/)
 

@@ -39,3 +39,9 @@ React, JavaScript, SortableJs
 6. Adapted for mobile devices
 
 ## Screenshots
+
+![ScreenShot](https://raw.github.com/ysnitko/ToDo/main/todo/src/assets/images/filtering.png)
+
+![ScreenShot](https://raw.github.com/ysnitko/ToDo/main/todo/src/assets/images/drag_drop.png)
+
+![ScreenShot](https://raw.github.com/ysnitko/ToDo/main/todo/src/assets/images/mobile.png)
